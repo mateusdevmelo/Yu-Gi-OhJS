@@ -78,6 +78,13 @@ async function createCardImage(idCard, fieldSide) {
     return cardImage;
 }
 
+async function drawSelectCard(index){
+    state.cardSprites.avatar.src = cardData[index].img;
+    state.cardSprites.name.innerText = "Class: " + cardData[index].name;
+    state.cardSprites.type.innerText = "Type: " + cardData[index].type;
+
+}
+
 async function drawCards(cardNumbers, fieldSide) {
     for(let i = 0; i < cardNumbers; i++) {
         const randomIdCard = await getRandomCardId();
